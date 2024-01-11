@@ -49,6 +49,9 @@ class Conf
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $phone2 = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -174,6 +177,18 @@ class Conf
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getPhone2(): ?string
+    {
+        return $this->phone2;
+    }
+
+    public function setPhone2(?string $phone2): static
+    {
+        $this->phone2 = $phone2;
 
         return $this;
     }

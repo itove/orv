@@ -67,6 +67,7 @@ class ConfCrudController extends AbstractCrudController
                     TextareaField::new('description'),
                     TextField::new('address'),
                     TextField::new('phone'),
+                    TextField::new('phone2'),
                     TextField::new('email'),
                     AssociationField::new('language'),
                     ImageField::new('logo')

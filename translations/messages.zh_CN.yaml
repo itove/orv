@@ -10,7 +10,7 @@ Price: 价格
 Date: 日期
 Name: 名称
 Contact: 联系人
-Phone: 电话
+Phone: 销售电话
 Address: 详细地址
 Username: 用户名
 Password: 密码
@@ -79,3 +79,4 @@ en:对于您提供的个人信息，我们将尊重您的隐私并严格保密: 
 Label: 标记
 Changelog: 更新日志
 Icon: 图标
+Phone2: 联系电话
