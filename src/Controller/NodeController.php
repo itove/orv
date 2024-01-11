@@ -35,6 +35,7 @@ class NodeController extends AbstractController
         $nodes = $this->data->getNodeByRegion($region, $limit, $offset);
         $nodes_all = $this->data->getNodeByRegion($region);
         $tag = $this->data->getTagByLabel($region);
+        $hero = $this->data->findNodeByRegionAndLocale('news-hero', $locale);
 
         $arr = $this->data->getSome();
         $arr['node'] = $tag;
@@ -63,6 +64,7 @@ class NodeController extends AbstractController
         if ($route == 'app_product_show') $pageTitle = 'Product';
         $locale = $request->getLocale();
         $node = $this->data->get($nid);
+        $hero = $this->data->findNodeByRegionAndLocale('news-hero', $locale);
         $info = $this->data->getInfo($locale);
         $data = [
           'page_title' => $this->translator->trans($pageTitle),
