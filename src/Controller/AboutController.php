@@ -29,6 +29,7 @@ class AboutController extends AbstractController
         $service = $this->data->findNodeByRegionAndLocale('online_service', $locale);
         $spare = $this->data->findNodeByRegionAndLocale('spare_guarantee', $locale);
         $timeline = $this->data->findNodesByRegionAndLocale('timeline', $locale);
+        $timeline_bg = $this->data->findNodesByRegionAndLocale('timeline-bg', $locale);
         $honors = $this->data->findNodeByRegion('honor');
         $news = $this->data->findNodeByRegion('news', 3);
         $info = $this->data->getInfo($locale);
