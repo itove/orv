@@ -39,6 +39,7 @@ class AboutController extends AbstractController
           'hero' => $hero,
           'about' => $about,
           'timeline' => $timeline,
+          'timeline_bg' => $timeline_bg,
           'service' => $service,
           'spare' => $spare,
           'honors' => $honors,
