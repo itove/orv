@@ -1879,3 +1879,8 @@ ul li:hover .slider p {
   display: block !important;
   font-weight: 100;
 }
+.dropdown-menu{
+  background: #252525b3 !important;
+  border-radius: 0 !important;
+  --bs-dropdown-link-hover-bg: #252525 !important;
+}
