@@ -9,6 +9,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\Data;
 
+#[Route('/products')]
 class ProductsController extends AbstractController
 {
     private $data;
@@ -20,7 +21,7 @@ class ProductsController extends AbstractController
         $this->translator = $translator;
     }
     
-    #[Route('/products/{category}', name: 'app_products')]
+    #[Route('/{category}', name: 'app_products')]
     public function index($category, Request $request): Response
     {
         $locale = $request->getLocale();
@@ -49,45 +50,6 @@ class ProductsController extends AbstractController
           'sliders6' => $sliders6,
           'spec1' => $spec1,
           'info' => $info,
-        ];
-        return $this->render('products/index.html.twig', $data);
-    }
-    
-    #[Route('/products/600', name: 'app_products_600')]
-    public function index2(Request $request): Response
-    {
-        $locale = $request->getLocale();
-        $request = $this->data->findNodeByRegionAndLocale('request', $locale);
-        $hero = $this->data->findNodeByRegion('products-2-hero', 1)[0];
-        $sliders1 = $this->data->findNodeByTag('products-2-slider-1', 3);
-        $sliders2 = $this->data->findNodeByTag('products-2-slider-2', 3);
-        $sliders3 = $this->data->findNodeByTag('products-2-slider-3', 3);
-        $sliders4 = $this->data->findNodeByTag('products-2-slider-4', 3);
-        $sliders5 = $this->data->findNodeByTag('products-2-slider-5', 3);
-        $sliders6 = $this->data->findNodeByCategory('gaizhuangche-1', 3);
-        $spec1 = $this->data->findNodeByTag('products-2-spec-1', 1)[0];
-        $improves = $this->data->findNodeByTag('products-2-improves', 5);
-        $conf = $this->data->findConfByLocale($locale);
-        $beian = $this->data->findNodeByRegion('beian', 1)[0];
-        $wechat = $this->data->findNodeByRegion('footer-wechatqr', 1)[0];
-        $miniprog = $this->data->findNodeByRegion('footer-miniprogqr', 1)[0];
-        $data = [
-          'class' => 'page-products position-absolute',
-          'page_title' => $this->translator->trans('Products'),
-          'request' => $request,
-          'hero' => $hero,
-          'improves' => $improves,
-          'sliders1' => $sliders1,
-          'sliders2' => $sliders2,
-          'sliders3' => $sliders3,
-          'sliders4' => $sliders4,
-          'sliders5' => $sliders5,
-          'sliders6' => $sliders6,
-          'spec1' => $spec1,
-          'conf' => $conf,
-          'beian' => $beian,
-          'wechat' => $wechat,
-          'miniprog' => $miniprog,
         ];
         return $this->render('products/index.html.twig', $data);
     }
