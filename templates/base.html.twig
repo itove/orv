@@ -13,8 +13,8 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta content="{{ conf.description }}" name="description">
-    <meta content="{{ conf.keywords|join(', ') }}" name="keywords">
+    <meta content="{{ info.conf.description }}" name="description">
+    <meta content="{{ info.conf.keywords|join(', ') }}" name="keywords">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
@@ -37,7 +37,7 @@
       href="{{ asset('css/swiper-bundle.min.css') }}"
     />
 
-    <title>{% block title %}{{ conf.sitename }}{% endblock %}</title>
+    <title>{% block title %}{{ info.conf.sitename }}{% endblock %}</title>
     {% block style %}{% endblock %}
   </head>
   <body>
@@ -46,7 +46,7 @@
       <nav class="navbar nav_background navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand" href="{{prefix}}/"
-            ><img src="{{ asset("images/#{conf.logo}")}}" alt="" width="200px"
+            ><img src="{{ asset("images/#{info.conf.logo}")}}" alt="" width="200px"
           /></a>
           <button
             class="navbar-toggler"
@@ -79,8 +79,9 @@
                   <i class="fa fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu text-center" style="background: none">
-                  <li><a class="dropdown-item text-light" href="{{ path('app_series_500') }}">逆行者 500</a></li>
-                  <li><a class="dropdown-item text-light" href="{{ path('app_series_600') }}">MS 600</a></li>
+{% for c in info.categories %}
+                  <li><a class="dropdown-item text-light" href="{{ path('app_products', {category: c.label}) }}">{{ c.name }}</a></li>
+{% endfor %}
                 </ul>
               </li>
               <li class="nav-item me-lg-3 mt-lg-0 mt-4 me-auto ms-auto">
@@ -134,19 +135,19 @@
         <li class="whatsapp">
           <i class="fa fa-user-circle-o" aria-hidden="true"></i>
           <div class="slider">
-            <p>{{ conf.phone }}</p>
+            <p>{{ info.conf.phone }}</p>
           </div>
         </li>
         <li class="whatsapp">
           <i class="fa fa-phone" aria-hidden="true"></i>
           <div class="slider">
-            <p>{{ conf.phone2 }}</p>
+            <p>{{ info.conf.phone2 }}</p>
           </div>
         </li>
         <li class="whatsapp">
           <i class="fa fa-comments" aria-hidden="true"></i>
           <div class="slider nobar">
-            <p><img src="{{ asset("images/#{wechat.image}") }}"></p>
+            <p><img src="{{ asset("images/#{info.wechat.image}") }}"></p>
           </div>
         </li>
         <li class="whatsapp">
@@ -165,14 +166,14 @@
                 东风越野车有限公司 DONGFENG OFF-ROAD VEHICLE CO.,LTD.
                 <a href="{{prefix}}/products">产品展示</a> | <a href="{{prefix}}/about"> 公司介绍</a> |
                 <a href="{{prefix}}/contact">联系我们</a> <br />
-                {{ conf.address }}
-                <a href="https://beian.miit.gov.cn/">{{ beian.summary }}</a> 销售电话：{{ conf.phone }}
+                {{ info.conf.address }}
+                <a href="https://beian.miit.gov.cn/">{{ info.beian.summary }}</a> 销售电话：{{ info.conf.phone }}
               </p>
             </div>
             <div class="col-12 col-md-4 mt-3 mt-md-0 text-center qr-img">
               <div class="weird w-100"></div>
-              <img src="{{ asset("images/#{wechat.image}")}}" alt="" class="img-fluid pt-0 pt-md-5 pb-3 ms-0" />
-              <img src="{{ asset("images/#{miniprog.image}")}}" alt="" class="img-fluid pt-0 pt-md-5 pb-3 ms-0" />
+              <img src="{{ asset("images/#{info.wechat.image}")}}" alt="" class="img-fluid pt-0 pt-md-5 pb-3 ms-0" />
+              <img src="{{ asset("images/#{info.miniprog.image}")}}" alt="" class="img-fluid pt-0 pt-md-5 pb-3 ms-0" />
             </div>
           </div>
         </div>

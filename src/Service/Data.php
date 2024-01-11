@@ -14,6 +14,7 @@ use App\Entity\Node;
 use App\Entity\Tag;
 use App\Entity\Region;
 use App\Entity\Language;
+use App\Entity\Category;
 
 class Data
 {
@@ -144,6 +145,23 @@ class Data
     public function findAll($criteria, $entity = Node::class)
     {
       return $this->doctrine->getRepository($entity)->findAll($criteria);
+    }
+    
+    public function getInfo(string $locale)
+    {
+      $conf = $this->findConfByLocale($locale);
+      $beian = $this->findNodeByRegion('beian', 1)[0];
+      $wechat = $this->findNodeByRegion('footer-wechatqr', 1)[0];
+      $miniprog = $this->findNodeByRegion('footer-miniprogqr', 1)[0];
+      $categories = $this->findAll([], Category::class);
+      
+      return [
+        'conf' => $conf,
+        'beian' => $beian,
+        'wechat' => $wechat,
+        'miniprog' => $miniprog,
+        'categories' => $categories,
+      ];
     }
 }
 

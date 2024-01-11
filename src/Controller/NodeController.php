@@ -41,10 +41,7 @@ class NodeController extends AbstractController
         $arr['nodes'] = $nodes;
         $arr['page'] = $page;
         $arr['page_count'] = ceil(count($nodes_all) / $limit);
-        $conf = $this->data->findConfByLocale($locale);
-        $beian = $this->data->findNodeByRegion('beian', 1)[0];
-        $wechat = $this->data->findNodeByRegion('footer-wechatqr', 1)[0];
-        $miniprog = $this->data->findNodeByRegion('footer-miniprogqr', 1)[0];
+        $info = $this->data->getInfo($locale);
 
         $data = [
           'nodes' => $nodes,
@@ -52,10 +49,7 @@ class NodeController extends AbstractController
           'page_title' => $this->translator->trans('News'),
           'page' => $page,
           'page_count' => ceil(count($nodes_all) / $limit),
-          'conf' => $conf,
-          'beian' => $beian,
-          'wechat' => $wechat,
-          'miniprog' => $miniprog,
+          'info' => $info,
         ];
         return $this->render('node/index.html.twig', $data);
     }
@@ -69,18 +63,12 @@ class NodeController extends AbstractController
         if ($route == 'app_product_show') $pageTitle = 'Product';
         $locale = $request->getLocale();
         $node = $this->data->get($nid);
-        $conf = $this->data->findConfByLocale($locale);
-        $beian = $this->data->findNodeByRegion('beian', 1)[0];
-        $wechat = $this->data->findNodeByRegion('footer-wechatqr', 1)[0];
-        $miniprog = $this->data->findNodeByRegion('footer-miniprogqr', 1)[0];
+        $info = $this->data->getInfo($locale);
         $data = [
           'page_title' => $this->translator->trans($pageTitle),
           'class' => 'page-news-show',
           'node' => $node,
-          'conf' => $conf,
-          'beian' => $beian,
-          'wechat' => $wechat,
-          'miniprog' => $miniprog,
+          'info' => $info,
         ];
         return $this->render('node/detail.html.twig', $data);
     }

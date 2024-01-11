@@ -20,8 +20,8 @@ class ProductsController extends AbstractController
         $this->translator = $translator;
     }
     
-    #[Route('/series/500', name: 'app_series_500')]
-    public function index(Request $request): Response
+    #[Route('/products/{category}', name: 'app_products')]
+    public function index($category, Request $request): Response
     {
         $locale = $request->getLocale();
         $request = $this->data->findNodeByRegionAndLocale('request', $locale);
@@ -34,10 +34,7 @@ class ProductsController extends AbstractController
         $sliders6 = $this->data->findNodeByCategory('gaizhuangche-1', 3);
         $spec1 = $this->data->findNodeByTag('products-spec-1', 1)[0];
         $improves = $this->data->findNodeByTag('products-improves', 5);
-        $conf = $this->data->findConfByLocale($locale);
-        $beian = $this->data->findNodeByRegion('beian', 1)[0];
-        $wechat = $this->data->findNodeByRegion('footer-wechatqr', 1)[0];
-        $miniprog = $this->data->findNodeByRegion('footer-miniprogqr', 1)[0];
+        $info = $this->data->getInfo($locale);
         $data = [
           'class' => 'page-products position-absolute',
           'page_title' => $this->translator->trans('Products'),
@@ -51,15 +48,12 @@ class ProductsController extends AbstractController
           'sliders5' => $sliders5,
           'sliders6' => $sliders6,
           'spec1' => $spec1,
-          'conf' => $conf,
-          'beian' => $beian,
-          'wechat' => $wechat,
-          'miniprog' => $miniprog,
+          'info' => $info,
         ];
         return $this->render('products/index.html.twig', $data);
     }
     
-    #[Route('/series/600', name: 'app_series_600')]
+    #[Route('/products/600', name: 'app_products_600')]
     public function index2(Request $request): Response
     {
         $locale = $request->getLocale();
