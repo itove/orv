@@ -26,16 +26,19 @@ class ProductsController extends AbstractController
     {
         $locale = $request->getLocale();
         $request = $this->data->findNodeByRegionAndLocale('request', $locale);
-        $hero = $this->data->findNodeByRegion('products-hero', 1)[0];
-        $sliders1 = $this->data->findNodeByTag('products-slider-1', 3);
-        $sliders2 = $this->data->findNodeByTag('products-slider-2', 3);
-        $sliders3 = $this->data->findNodeByTag('products-slider-3', 3);
-        $sliders4 = $this->data->findNodeByTag('products-slider-4', 3);
-        $sliders5 = $this->data->findNodeByTag('products-slider-5', 3);
+        
+        $hero = $this->data->findNodeByCategoryAndRegion($category, 'products-hero', 1)[0];
+        $sliders1 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-1', 3);
+        $sliders2 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-2', 3);
+        $sliders3 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-3', 3);
+        $sliders4 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-4', 3);
+        $sliders5 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-5', 3);
         $sliders6 = $this->data->findNodeByCategory('gaizhuangche-1', 3);
-        $spec1 = $this->data->findNodeByTag('products-spec-1', 1)[0];
-        $improves = $this->data->findNodeByTag('products-improves', 5);
+        $spec1 = $this->data->findNodeByCategoryAndTag($category, 'products-spec-1', 1)[0];
+        $improves = $this->data->findNodeByCategoryAndTag($category, 'products-improves', 5);
+        
         $info = $this->data->getInfo($locale);
+        
         $data = [
           'class' => 'page-products position-absolute',
           'page_title' => $this->translator->trans('Products'),

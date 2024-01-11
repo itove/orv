@@ -62,6 +62,40 @@ class NodeRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    
+    public function findByCategoryAndRegion($category, $region, $limit = null, $offset = null): array
+    {
+        return $this->createQueryBuilder('n')
+            ->join('n.region', 'r')
+            ->join('n.category', 'c')
+            ->andWhere('r.label = :region')
+            ->andWhere('c.label = :category')
+            ->setParameter('region', $region)
+            ->setParameter('category', $region)
+            ->orderBy('n.id', 'DESC')
+            ->setMaxResults($limit)
+            ->setFirstResult($offset)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
+    public function findByCategoryAndTag($category, $tag, $limit = null, $offset = null): array
+    {
+        return $this->createQueryBuilder('n')
+            ->join('n.tag', 't')
+            ->join('n.category', 'c')
+            ->andWhere('t.label = :tag')
+            ->andWhere('c.label = :category')
+            ->setParameter('tag', $tag)
+            ->setParameter('category', $tag)
+            ->orderBy('n.id', 'DESC')
+            ->setMaxResults($limit)
+            ->setFirstResult($offset)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
 //    /**
 //     * @return Node[] Returns an array of Node objects
