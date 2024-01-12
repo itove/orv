@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RegionRepository::class)]
 class Region
@@ -16,9 +17,17 @@ class Region
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 255)]
     private ?string $label = null;
 
@@ -28,12 +37,20 @@ class Region
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $count = 0;
 
+    #[Assert\Length(
+        min: 2,
+        max: 20,
+    )]
     #[ORM\Column(length: 20, nullable: true)]
     private ?string $icon = null;
 
     #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
     private ?array $fields = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 150,
+    )]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
     

@@ -19,9 +19,17 @@ class Category
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 255)]
     private ?string $label = null;
 

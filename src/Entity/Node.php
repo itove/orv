@@ -20,6 +20,10 @@ class Node
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 

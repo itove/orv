@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\SpecRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: SpecRepository::class)]
 class Spec
@@ -13,9 +14,16 @@ class Spec
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 25)]
     private ?string $name = null;
 
+    #[Assert\Length(
+        max: 250,
+    )]
     #[ORM\Column(length: 255)]
     private ?string $value = null;
 

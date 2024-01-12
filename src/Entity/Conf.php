@@ -18,21 +18,41 @@ class Conf
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 255)]
     private ?string $sitename = null;
 
     #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
     private ?array $keywords = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $address = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 25,
+    )]
     #[ORM\Column(length: 25, nullable: true)]
     private ?string $phone = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+    )]
     #[ORM\Column(length: 55, nullable: true)]
     private ?string $email = null;
 
@@ -49,6 +69,10 @@ class Conf
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 25,
+    )]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $phone2 = null;
 
