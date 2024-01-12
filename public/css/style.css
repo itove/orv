@@ -97,7 +97,6 @@ font-family: 'Source Han Sans CN', sans-serif;
       font-size: 48px;
       letter-spacing: 0px;
       line-height: 2px;
-      text-transform: uppercase;
       color: #fefefe;
       font-weight: bold;
       font-family: "Source Han Sans CN";
@@ -184,7 +183,6 @@ font-family: 'Source Han Sans CN', sans-serif;
   }
   .section-2-text p ,.section-3-text p,.section-6-text p,.section-6-text-2 p,.section-7-text p{
       color: #fefefe;
-      text-transform: uppercase;
       font-family: "Source Han Sans CN";
   }
   .section-3-text p {
@@ -194,7 +192,6 @@ font-family: 'Source Han Sans CN', sans-serif;
       font-size: 24px;
       letter-spacing: 0px;
       line-height: 30px;
-      text-transform: uppercase;
       color: #fefefe;
       font-weight: bold;
       font-family: "Source Han Sans CN";
@@ -339,7 +336,6 @@ font-family: 'Source Han Sans CN', sans-serif;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
-      text-transform: uppercase;
       color: #fefefe;
       font-family: "Source Han Sans CN";
   }
@@ -370,7 +366,6 @@ font-family: 'Source Han Sans CN', sans-serif;
       font-size: 14px;
       letter-spacing: 0px;
       line-height: 30px;
-      text-transform: uppercase;
       color: #fefefe;
       font-family: "Source Han Sans CN";
   }
@@ -541,7 +536,6 @@ font-family: 'Source Han Sans CN', sans-serif;
       background-size: cover;
       font-size: 15px;
       line-height: 30px;
-      text-transform: uppercase;
       color: #ffffff;
       font-family: 'Source Han Sans CN', sans-serif;
     }
@@ -617,7 +611,6 @@ font-family: 'Source Han Sans CN', sans-serif;
         font-size: 48px;
         letter-spacing: 0px;
         line-height: 2px;
-        text-transform: uppercase;
         color: #fefefe;
         font-weight: bold;
         font-family: "Source Han Sans CN";
@@ -704,7 +697,6 @@ font-family: 'Source Han Sans CN', sans-serif;
     }
     .section-2-text p ,.section-3-text p,.section-6-text p,.section-6-text-2 p,.section-7-text p{
         color: #fefefe;
-        text-transform: uppercase;
         font-family: "Source Han Sans CN";
     }
     .section-3-text p {
@@ -714,7 +706,6 @@ font-family: 'Source Han Sans CN', sans-serif;
         font-size: 24px;
         letter-spacing: 0px;
         line-height: 30px;
-        text-transform: uppercase;
         color: #fefefe;
         font-weight: bold;
         font-family: "Source Han Sans CN";
@@ -859,7 +850,6 @@ font-family: 'Source Han Sans CN', sans-serif;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
-        text-transform: uppercase;
         color: #fefefe;
         font-family: "Source Han Sans CN";
     }
@@ -897,7 +887,6 @@ font-family: 'Source Han Sans CN', sans-serif;
         font-size: 14px;
         letter-spacing: 0px;
         line-height: 30px;
-        text-transform: uppercase;
         color: #fefefe;
         font-family: "Source Han Sans CN";
     }
@@ -1077,7 +1066,6 @@ font-family: 'Source Han Sans CN', sans-serif;
         background-size: cover;
         font-size: 15px;
         line-height: 30px;
-        text-transform: uppercase;
         color: #ffffff;
         font-family: 'Source Han Sans CN', sans-serif;
       }
@@ -1180,7 +1168,6 @@ font-family: 'Source Han Sans CN', sans-serif;
 {
     font-size: 1.5rem !important;
 line-height: 26px;
-text-transform: uppercase;
 color: #000000;
 font-weight: bold;
 font-family: 'Source Han Sans CN', sans-serif;
@@ -1512,7 +1499,6 @@ font-family: 'Source Han Sans CN', sans-serif;
 
     font-size: 15px;
 line-height: 30px;
-text-transform: uppercase;
 color: #ffffff;
 font-family: 'Source Han Sans CN', sans-serif;
   }
@@ -1553,14 +1539,12 @@ font-family: 'Source Han Sans CN', sans-serif;
     opacity: 0.302;
     font-size: 18px;
     line-height: 28px;
-    text-transform: uppercase;
     color: #000000;
     font-family: "Source Han Sans CN";
   }
   .grid-heading {
     font-size: 34px;
     line-height: 35px;
-    text-transform: uppercase;
     color: #000000;
     font-weight: bold;
     font-family: "Source Han Sans CN";
@@ -1569,7 +1553,6 @@ font-family: 'Source Han Sans CN', sans-serif;
   .grid-paragraph {
     font-size: 24px;
     line-height: 35px;
-    text-transform: uppercase;
     color: #000000;
     font-family: "Source Han Sans CN";
   }
@@ -1590,7 +1573,6 @@ font-family: 'Source Han Sans CN', sans-serif;
     opacity: 0.302;
     font-size: 18px;
     line-height: 28px;
-    text-transform: uppercase;
     color: #000000;
     font-family: "Source Han Sans CN";
   }
@@ -1672,7 +1654,6 @@ font-family: 'Source Han Sans CN', sans-serif;
 
 .slider p {
   font-family: arial;
-  text-transform: uppercase;
   font-size: 12px;
   font-weight: 900;
   color: #fff;
