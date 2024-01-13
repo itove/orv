@@ -147,7 +147,9 @@
         <li class="whatsapp">
           <i class="fa fa-comments" aria-hidden="true"></i>
           <div class="slider nobar">
+          {% if info.wechat %}
             <p><img src="{{ asset("images/#{info.wechat.image}") }}"></p>
+          {% endif %}
           </div>
         </li>
         <li class="whatsapp">
@@ -167,13 +169,20 @@
                 <a href="{{prefix}}/products">产品展示</a> | <a href="{{prefix}}/about"> 公司介绍</a> |
                 <a href="{{prefix}}/contact">联系我们</a> <br />
                 {{ info.conf.address }}
-                <a href="https://beian.miit.gov.cn/">{{ info.beian.summary }}</a> 销售电话：{{ info.conf.phone }}
+                {% if info.beian %}
+                <a href="https://beian.miit.gov.cn/">{{ info.beian.summary }}</a>
+                {% endif %}
+                销售电话：{{ info.conf.phone }}
               </p>
             </div>
             <div class="col-12 col-md-4 mt-3 mt-md-0 text-center qr-img">
               <div class="weird w-100"></div>
+                {% if info.wechat %}
               <img src="{{ asset("images/#{info.wechat.image}")}}" alt="" class="img-fluid pt-0 pt-md-5 pb-3 ms-0" />
+                {% endif %}
+                {% if info.miniprog %}
               <img src="{{ asset("images/#{info.miniprog.image}")}}" alt="" class="img-fluid pt-0 pt-md-5 pb-3 ms-0" />
+                {% endif %}
             </div>
           </div>
         </div>

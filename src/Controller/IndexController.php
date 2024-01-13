@@ -24,7 +24,6 @@ class IndexController extends AbstractController
     public function index(Request $request): Response
     {
         $locale = $request->getLocale();
-        // $arr['slides'] = $this->data->getNodeByTag('carousel', 6);
         $sliders1 = $this->data->findNodeByTag('home-slider-1', 3);
         $nodes = $this->data->findNodeByRegion('news', 3);
         $homeAbout = $this->data->findNodeByRegion('home-about', 1);

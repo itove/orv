@@ -27,15 +27,15 @@ class ProductsController extends AbstractController
         $locale = $request->getLocale();
         $request = $this->data->findNodeByRegionAndLocale('request', $locale);
         
-        $hero = $this->data->findNodeByCategoryAndRegion($category, 'products-hero', 1);
-        $sliders1 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-1', 3);
-        $sliders2 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-2', 3);
-        $sliders3 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-3', 3);
-        $sliders4 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-4', 3);
-        $sliders5 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-5', 3);
-        $sliders6 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-6', 3);
-        $spec1 = $this->data->findNodeByCategoryAndTag($category, 'products-spec-1', 1);
-        $improves = $this->data->findNodeByCategoryAndTag($category, 'products-improves', 5);
+        $hero = $this->data->findNodeByCategoryAndRegion($category, 'products-hero', 1, null, $locale);
+        $sliders1 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-1', 3, null, $locale);
+        $sliders2 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-2', 3, null, $locale);
+        $sliders3 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-3', 3, null, $locale);
+        $sliders4 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-4', 3, null, $locale);
+        $sliders5 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-5', 3, null, $locale);
+        $sliders6 = $this->data->findNodeByCategoryAndTag($category, 'products-slider-6', 3, null, $locale);
+        $spec1 = $this->data->findNodeByCategoryAndTag($category, 'products-spec-1', 1, null, $locale);
+        $improves = $this->data->findNodeByCategoryAndTag($category, 'products-improves', 5, null, $locale);
         
         $info = $this->data->getInfo($locale);
         

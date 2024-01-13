@@ -21,12 +21,15 @@ class NodeRepository extends ServiceEntityRepository
         parent::__construct($registry, Node::class);
     }
     
-    public function findByTag($tag, $limit = null, $offset = null): array
+    public function findByTag($tag, $limit = null, $offset = null, $locale): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.tag', 't')
+            ->leftJoin('n.language', 'l')
             ->andWhere('t.label = :tag')
+            ->andWhere('l.locale = :locale OR l is null')
             ->setParameter('tag', $tag)
+            ->setParameter('locale', $locale)
             ->orderBy('n.id', 'DESC')
             ->setMaxResults($limit)
             ->setFirstResult($offset)
@@ -35,12 +38,15 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByCategory($category, $limit = null, $offset = null): array
+    public function findByCategory($category, $limit = null, $offset = null, $locale): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.category', 'c')
+            ->leftJoin('n.language', 'l')
             ->andWhere('c.label = :category')
+            ->andWhere('l.locale = :locale OR l is null')
             ->setParameter('category', $category)
+            ->setParameter('locale', $locale)
             ->orderBy('n.id', 'DESC')
             ->setMaxResults($limit)
             ->setFirstResult($offset)
@@ -49,12 +55,15 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByRegion($region, $limit = null, $offset = null): array
+    public function findByRegion($region, $limit = null, $offset = null, $locale): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.region', 'r')
+            ->leftjoin('n.language', 'l')
             ->andWhere('r.label = :region')
+            ->andWhere('l.locale = :locale OR l is null')
             ->setParameter('region', $region)
+            ->setParameter('locale', $locale)
             ->orderBy('n.id', 'DESC')
             ->setMaxResults($limit)
             ->setFirstResult($offset)
@@ -63,15 +72,18 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByCategoryAndRegion($category, $region, $limit = null, $offset = null): array
+    public function findByCategoryAndRegion($category, $region, $limit = null, $offset = null, $locale): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.region', 'r')
             ->join('n.category', 'c')
+            ->leftJoin('n.language', 'l')
             ->andWhere('r.label = :region')
             ->andWhere('c.label = :category')
+            ->andWhere('l.locale = :locale OR l is null')
             ->setParameter('region', $region)
             ->setParameter('category', $category)
+            ->setParameter('locale', $locale)
             ->orderBy('n.id', 'DESC')
             ->setMaxResults($limit)
             ->setFirstResult($offset)
@@ -80,15 +92,18 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByCategoryAndTag($category, $tag, $limit = null, $offset = null): array
+    public function findByCategoryAndTag($category, $tag, $limit = null, $offset = null, $locale): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.tag', 't')
             ->join('n.category', 'c')
+            ->leftJoin('n.language', 'l')
             ->andWhere('t.label = :tag')
             ->andWhere('c.label = :category')
+            ->andWhere('l.locale = :locale OR l is null')
             ->setParameter('tag', $tag)
             ->setParameter('category', $category)
+            ->setParameter('locale', $locale)
             ->orderBy('n.id', 'DESC')
             ->setMaxResults($limit)
             ->setFirstResult($offset)
