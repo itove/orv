@@ -33,11 +33,8 @@
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <select class="form-select mt-4 py-2 remove-focus-outline rounded-0" aria-label="Default select example">
+                    <select id="countries" name="country" class="form-select mt-4 py-2 remove-focus-outline rounded-0" aria-label="Default select example">
                         <option selected>国家/地区</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
                     </select>
                 </div>
                 <div class="input-group mt-4">
@@ -66,3 +63,18 @@
             </div>
         </form>
     </div>
+
+    <script>
+    async function getCountries() {
+      const response = await fetch("/js/countryCode.json");
+      const countries = await response.json();
+      let s = document.querySelector('#countries');
+      for (let c of countries) {
+        let e = document.createElement('option')
+        e.value = c.chinese_name;
+        e.innerText = c.chinese_name;
+        s.appendChild(e);
+      }
+    }
+    getCountries();
+    </script>
