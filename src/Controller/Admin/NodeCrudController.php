@@ -31,6 +31,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Asset;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 
 class NodeCrudController extends AbstractCrudController
 {
@@ -117,6 +118,25 @@ class NodeCrudController extends AbstractCrudController
         } else {
             return $crud;
         }
+    }
+    
+    public function configureFilters(Filters $filters): Filters
+    {
+        $f = $filters;
+        if ($this->region->getLabel() === 'product') {
+            $f = $filters
+                ->add('tag')
+                ->add('category')
+                ->add('language')
+            ;
+        }
+        if ($this->region->getLabel() === 'news') {
+            $f = $filters
+                ->add('tag')
+                ->add('language')
+            ;
+        }
+        return $f;
     }
 
     public function configureFields(string $pageName): iterable
