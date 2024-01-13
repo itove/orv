@@ -64,6 +64,9 @@ class Node
     #[ORM\ManyToOne(inversedBy: 'nodes')]
     private ?Category $category = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $show = true;
+
     public function __construct()
     {
         $this->tag = new ArrayCollection();
@@ -282,6 +285,18 @@ class Node
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function isShow(): ?bool
+    {
+        return $this->show;
+    }
+
+    public function setShow(?bool $show): static
+    {
+        $this->show = $show;
 
         return $this;
     }

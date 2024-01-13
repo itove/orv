@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use App\Admin\Field\VichImageField;
@@ -151,6 +152,7 @@ class NodeCrudController extends AbstractCrudController
             ->setUploadDir('public/images/')
         ;
 
+        $showField = BooleanField::new('show');
         $vichImageField = VichImageField::new('imageFile', 'Image')->hideOnIndex();
         $tagFieldOnIndex = ArrayField::new('tag')->onlyOnIndex();
         $tagField = AssociationField::new('tag')
