@@ -25,7 +25,7 @@ class ProductsController extends AbstractController
     public function index($category, Request $request): Response
     {
         $locale = $request->getLocale();
-        $request = $this->data->findNodeByRegionAndLocale('request', $locale);
+        $request = $this->data->findNodeByRegion('request', $locale, 1);
         
         $hero = $this->data->findNodeByCategoryAndRegion($category, $locale, 'products-hero', 1);
         $sliders1 = $this->data->findNodeByCategoryAndTag($category, $locale, 'products-slider-1', 3);
@@ -42,7 +42,7 @@ class ProductsController extends AbstractController
         $data = [
           'class' => 'page-products position-absolute',
           'page_title' => $this->translator->trans('Products'),
-          'request' => $request,
+          'request' => $request[0],
           'hero' => empty($hero)? [] : $hero[0],
           'improves' => $improves,
           'sliders1' => $sliders1,

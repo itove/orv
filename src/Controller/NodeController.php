@@ -35,7 +35,7 @@ class NodeController extends AbstractController
         $nodes = $this->data->findNodeByRegion($region, $locale, $limit, $offset);
         $nodes_all = $this->data->findNodeByRegion($region, $locale);
         $tag = $this->data->findTagByLabel($region);
-        $hero = $this->data->findNodeByRegionAndLocale('news-hero', $locale);
+        $hero = $this->data->findNodeByRegion('news-hero', $locale, 1);
 
         $arr = $this->data->getSome();
         $arr['node'] = $tag;
@@ -46,7 +46,7 @@ class NodeController extends AbstractController
 
         $data = [
           'nodes' => $nodes,
-          'hero' => $hero,
+          'hero' => $hero[0],
           'class' => 'page-news-list',
           'page_title' => $this->translator->trans('News'),
           'page' => $page,
@@ -65,13 +65,13 @@ class NodeController extends AbstractController
         if ($route == 'app_product_show') $pageTitle = 'Product';
         $locale = $request->getLocale();
         $node = $this->data->get($nid);
-        $hero = $this->data->findNodeByRegionAndLocale('news-hero', $locale);
+        $hero = $this->data->findNodeByRegion('news-hero', $locale, 1);
         $info = $this->data->getInfo($locale);
         $data = [
           'page_title' => $this->translator->trans($pageTitle),
           'class' => 'page-news-show',
           'node' => $node,
-          'hero' => $hero,
+          'hero' => $hero[0],
           'info' => $info,
         ];
         return $this->render('node/detail.html.twig', $data);
