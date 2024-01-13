@@ -1303,7 +1303,7 @@ font-family: 'Source Han Sans CN', sans-serif;
   margin: auto;
 }
   .select{
-    position: relative;
+    position: absolute;
     top: 5rem;
     left: 2.5rem;
     text-align: left;
