@@ -30,6 +30,7 @@ class IndexController extends AbstractController
         $homeService = $this->data->findNodeByRegion('home-service', $locale, 1);
         $sliders2a = $this->data->findNodeByCategoryAndTag('series-500', $locale, 'home-slider-2', 6);
         $sliders2b = $this->data->findNodeByCategoryAndTag('series-600', $locale, 'home-slider-2', 6);
+        $slider2_bg = $this->data->findNodeByRegion('home-slider2-bg', $locale, 1);
         $info = $this->data->getInfo($locale);
         $data = [
           'path' => '',
@@ -38,8 +39,9 @@ class IndexController extends AbstractController
           'sliders1' => $sliders1,
           'sliders2a' => $sliders2a,
           'sliders2b' => $sliders2b,
-          'homeAbout' => $homeAbout[0],
-          'homeService' => $homeService[0],
+          'slider2_bg' => empty($slider2_bg) ? [] : $slider2_bg[0],
+          'homeAbout' => empty($homeAbout) ? [] : $homeAbout[0],
+          'homeService' => empty($homeService) ? [] : $homeService[0],
           'class' => 'page-home position-absolute',
         ];
         return $this->render('index/index.html.twig', $data);

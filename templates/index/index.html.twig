@@ -71,7 +71,11 @@
     </div>
     
     <div class="swiper mySwiper2">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper"
+      {% if slider2_bg %}
+        style="background-image: url({{ asset("images/#{slider2_bg.image}" )}})"
+        {% endif %}
+        >
         {% for n in sliders2a %}
         <div class="swiper-slide">
         {% set path = path('app_products', {category: 'series-500'})%}
@@ -112,7 +116,11 @@
     </div>
 
     <div class="swiper mySwiper4 d-none">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper"
+      {% if slider2_bg %}
+        style="background-image: url({{ asset("images/#{slider2_bg.image}" )}})"
+        {% endif %}
+        >
         {% for n in sliders2b %}
         <div class="swiper-slide">
         {% set path = path('app_products', {category: 'series-600'})%}
