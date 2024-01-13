@@ -88,9 +88,9 @@ class Data
         return $nodes;
     }
     
-    public function findNodeByCategory(string $category, $limit = null, $offset = null)
+    public function findNodeByCategory(string $category, $limit = null, $offset = null, $locale)
     {
-        $nodes = $this->doctrine->getRepository(Node::class)->findByCategory($category, $limit, $offset);
+        $nodes = $this->doctrine->getRepository(Node::class)->findByCategory($category, $limit, $offset, $locale);
         return $nodes;
     }
     
