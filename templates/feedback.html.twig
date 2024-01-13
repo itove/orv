@@ -72,7 +72,11 @@
       for (let c of countries) {
         let e = document.createElement('option')
         e.value = c.chinese_name;
-        e.innerText = c.chinese_name;
+        if (window.location.pathname.indexOf('/cn/') === 0) {
+          e.innerText = c.chinese_name;
+        } else {
+          e.innerText = c.english_name;
+        }
         s.appendChild(e);
       }
     }
