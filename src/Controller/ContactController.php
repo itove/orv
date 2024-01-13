@@ -31,6 +31,7 @@ class ContactController extends AbstractController
         $hero = $this->data->findNodeByRegion('contact-hero', $locale, 1);
         $contact = $this->data->findNodeByRegion('contact_us', $locale, 1);
         $request = $this->data->findNodeByRegion('request', $locale, 1);
+        $products = $this->data->findNodeByShow($locale);
         $info = $this->data->getInfo($locale);
         $data = [
           'class' => 'page-contact',
@@ -39,6 +40,7 @@ class ContactController extends AbstractController
           'hero' => $hero[0],
           'contact' => $contact[0],
           'request' => $request[0],
+          'products' => $products,
           'info' => $info,
         ];
         return $this->render('contact/index.html.twig', $data);

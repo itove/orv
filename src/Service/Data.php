@@ -143,6 +143,13 @@ class Data
       ];
     }
     
+    public function findNodeByShow($locale, int $limit = null, $offset = null)
+    {
+      return $this->doctrine->getRepository(Node::class)
+                            ->findByShow($locale, $limit, $offset)
+                        ;
+    }
+    
     public function findNodeByCategoryAndRegion($cate_label, $region_label, $locale, int $limit = null, $offset = null)
     {
       return $this->doctrine->getRepository(Node::class)

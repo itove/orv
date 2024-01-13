@@ -111,6 +111,21 @@ class NodeRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    
+    public function findByShow($locale, $limit = null, $offset = null): array
+    {
+        return $this->createQueryBuilder('n')
+            ->leftJoin('n.language', 'l')
+            ->andWhere('n.show = true')
+            ->andWhere('l.locale = :locale OR l is null')
+            ->setParameter('locale', $locale)
+            ->orderBy('n.id', 'DESC')
+            ->setMaxResults($limit)
+            ->setFirstResult($offset)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
 //    /**
 //     * @return Node[] Returns an array of Node objects

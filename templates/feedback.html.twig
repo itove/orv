@@ -26,11 +26,10 @@
                     <input type="text" name="phone" required class="form-control mt-4 py-2 remove-focus-outline rounded-0" id="input-phone" placeholder="手机:">
                 </div>
                 <div class="col-md-6">
-                    <select class="form-select mt-4 py-2 remove-focus-outline rounded-0" aria-label="Default select example">
-                        <option selected>咨询车型</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select name="pid" class="form-select mt-4 py-2 remove-focus-outline rounded-0" aria-label="Default select example">
+                    {% for p in products %}
+                        <option value="{{ p.id }}">{{ p.title }}</option>
+                    {% endfor %}
                     </select>
                 </div>
                 <div class="col-md-6">
