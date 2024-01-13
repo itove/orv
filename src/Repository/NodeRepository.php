@@ -115,7 +115,9 @@ class NodeRepository extends ServiceEntityRepository
     public function findByShow($locale, $limit = null, $offset = null): array
     {
         return $this->createQueryBuilder('n')
+            ->join('n.region', 'r')
             ->leftJoin('n.language', 'l')
+            ->andWhere('r.id = 1')
             ->andWhere('n.show = true')
             ->andWhere('l.locale = :locale OR l is null')
             ->setParameter('locale', $locale)
