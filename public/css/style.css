@@ -1847,7 +1847,7 @@ ul li:hover .slider p {
   top: 32rem !important;
 }
 .swiper6 img{
-  object-fit: contain;
+  object-fit: cover;
 }
 .swiper6 .section-9{
   height: 30rem;
