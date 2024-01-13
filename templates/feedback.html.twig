@@ -9,21 +9,21 @@
                 <div class="col-md-6">
                     <div class="input-with-label">
                         <span class="required-input"></span>
-                        <input type="text" name="firstname" required class="form-control mt-2 py-2 remove-focus-outline rounded-0" id="input-firstname" placeholder="名字:">
+                        <input type="text" name="firstname" required class="form-control mt-2 py-2 remove-focus-outline rounded-0" id="input-firstname" placeholder="{{ 'Firstname'|trans }}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="input-with-label">
                         <span class="required-input"></span>
-                        <input type="text" name="lastname" class="form-control mt-2 py-2 remove-focus-outline rounded-0" id="input-lastname" placeholder="姓氏:">
+                        <input type="text" name="lastname" class="form-control mt-2 py-2 remove-focus-outline rounded-0" id="input-lastname" placeholder="{{ 'Lastname'|trans }}">
                     </div>                </div>
                 <div class="col-md-6">
                     <div class="input-with-label">
                         <span class="required-input"></span>
-                        <input type="email" name="email" required class="form-control mt-4 py-2 remove-focus-outline rounded-0" id="input-email" placeholder="邮箱:">
+                        <input type="email" name="email" required class="form-control mt-4 py-2 remove-focus-outline rounded-0" id="input-email" placeholder="{{ 'Email'|trans }}">
                     </div>                </div>
                 <div class="col-md-6">
-                    <input type="text" name="phone" required class="form-control mt-4 py-2 remove-focus-outline rounded-0" id="input-phone" placeholder="手机:">
+                    <input type="text" name="phone" required class="form-control mt-4 py-2 remove-focus-outline rounded-0" id="input-phone" placeholder="{{ 'Tel'|trans }}">
                 </div>
                 <div class="col-md-6">
                     <select name="pid" class="form-select mt-4 py-2 remove-focus-outline rounded-0" aria-label="Default select example">
@@ -34,21 +34,21 @@
                 </div>
                 <div class="col-md-6">
                     <select id="countries" name="country" class="form-select mt-4 py-2 remove-focus-outline rounded-0" aria-label="Default select example">
-                        <option selected>国家/地区</option>
+                        <option selected>{{ 'Country/Region'|trans }}</option>
                     </select>
                 </div>
                 <div class="input-group mt-4">
-                    <textarea name="body" required class="form-control remove-focus-outline rounded-0" aria-label="需求描述 With textarea" placeholder="需求描述"></textarea>
+                    <textarea name="body" required class="form-control remove-focus-outline rounded-0" aria-label="需求描述 With textarea" placeholder="{{ 'Describe Your Needs'|trans }}"></textarea>
                 </div>
             </div>
             <div class="form-check">
                 <input class="form-check-input rounded-0" type="checkbox" value="" id="flexCheckDefault" required>
                 <label class="form-check-label" for="flexCheckDefault">
-                  {{ 'I Agree'|trans }}
+                  {{ 'I agree to the Terms of Service.'|trans }}
                 </label>
               </div>
               <div class="bottom-text">
-                {{ 'en:对于您提供的个人信息，我们将尊重您的隐私并严格保密'|trans }}
+                {{ 'We will respect your privacy and keep the personal information you provide strictly confidential.'|trans }}
               </div>
 
             <div class="my-3">

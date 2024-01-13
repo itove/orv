@@ -60,7 +60,6 @@ Super Admin: 超级管理员
 Specs: 参数
 Spec Name: 参数名
 Spec Value: 参数值
-Firstname: 名字
 Lastname: 姓氏
 Country: 国家
 SHOW MORE: 查看详情
@@ -74,10 +73,15 @@ Service Mail: 服务邮箱
 Service Hotline: 全国服务热线
 About Us: 关于我们
 Submit: 提交
-I Agree: 我同意隐私政策
-en:对于您提供的个人信息，我们将尊重您的隐私并严格保密: 对于您提供的个人信息，我们将尊重您的隐私并严格保密
+I agree to the Terms of Service.:  我同意服务条款。
+We will respect your privacy and keep the personal information you provide strictly confidential.: 对于您提供的个人信息，我们将尊重您的隐私并严格保密。
 Label: 标记
 Changelog: 更新日志
 Icon: 图标
 Phone2: 联系电话
 Show: 需求表单中显示
+Firstname: 名字
+Tel: 电话
+Country/Region: 国家/地区
+Describe Your Needs: 需求描述
+Specification: 参数配置表
