@@ -24,12 +24,12 @@ class IndexController extends AbstractController
     public function index(Request $request): Response
     {
         $locale = $request->getLocale();
-        $sliders1 = $this->data->findNodeByTag('home-slider-1', 3, null, $locale);
-        $nodes = $this->data->findNodeByRegion('news', 3, null, $locale);
-        $homeAbout = $this->data->findNodeByRegion('home-about', 1, null, $locale);
-        $homeService = $this->data->findNodeByRegion('home-service', 1, null, $locale);
-        $sliders2a = $this->data->findNodeByCategory('series-500', 6, null, $locale);
-        $sliders2b = $this->data->findNodeByCategory('series-600', 6, null, $locale);
+        $sliders1 = $this->data->findNodeByTag('home-slider-1', $locale, 3);
+        $nodes = $this->data->findNodeByRegion('news', $locale, 3);
+        $homeAbout = $this->data->findNodeByRegion('home-about', $locale, 1);
+        $homeService = $this->data->findNodeByRegion('home-service', $locale, 1);
+        $sliders2a = $this->data->findNodeByCategory('series-500', $locale, 6);
+        $sliders2b = $this->data->findNodeByCategory('series-600', $locale, 6);
         $info = $this->data->getInfo($locale);
         $data = [
           'path' => '',

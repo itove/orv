@@ -32,8 +32,8 @@ class NodeController extends AbstractController
         }
         $offset = $limit * ($page - 1);
         
-        $nodes = $this->data->findNodeByRegion($region, $limit, $offset, $locale);
-        $nodes_all = $this->data->findNodeByRegion($region, null, null, $locale);
+        $nodes = $this->data->findNodeByRegion($region, $locale, $limit, $offset);
+        $nodes_all = $this->data->findNodeByRegion($region, $locale);
         $tag = $this->data->findTagByLabel($region);
         $hero = $this->data->findNodeByRegionAndLocale('news-hero', $locale);
 

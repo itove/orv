@@ -21,7 +21,7 @@ class NodeRepository extends ServiceEntityRepository
         parent::__construct($registry, Node::class);
     }
     
-    public function findByTag($tag, $limit = null, $offset = null, $locale): array
+    public function findByTag($tag, $locale, $limit = null, $offset = null): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.tag', 't')
@@ -38,7 +38,7 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByCategory($category, $limit = null, $offset = null, $locale): array
+    public function findByCategory($category, $locale, $limit = null, $offset = null): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.category', 'c')
@@ -55,7 +55,7 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByRegion($region, $limit = null, $offset = null, $locale): array
+    public function findByRegion($region, $locale, $limit = null, $offset = null): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.region', 'r')
@@ -72,7 +72,7 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByCategoryAndRegion($category, $region, $limit = null, $offset = null, $locale): array
+    public function findByCategoryAndRegion($category, $locale, $region, $limit = null, $offset = null): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.region', 'r')
@@ -92,7 +92,7 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByCategoryAndTag($category, $tag, $limit = null, $offset = null, $locale): array
+    public function findByCategoryAndTag($category, $locale, $tag, $limit = null, $offset = null): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.tag', 't')

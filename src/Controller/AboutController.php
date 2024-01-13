@@ -24,24 +24,24 @@ class AboutController extends AbstractController
     public function index(Request $request): Response
     {
         $locale = $request->getLocale();
-        $hero = $this->data->findNodeByRegionAndLocale('about-hero', $locale);
-        $about = $this->data->findNodeByRegionAndLocale('about_dongfeng_orv', $locale);
-        $service = $this->data->findNodeByRegionAndLocale('online_service', $locale);
-        $spare = $this->data->findNodeByRegionAndLocale('spare_guarantee', $locale);
-        $timeline = $this->data->findNodesByRegionAndLocale('timeline', $locale);
-        $timeline_bg = $this->data->findNodeByRegionAndLocale('timeline-bg', $locale);
-        $honors = $this->data->findNodeByRegion('honor');
-        $news = $this->data->findNodeByRegion('news', 3);
+        $hero = $this->data->findNodeByRegion('about-hero', $locale, 1);
+        $about = $this->data->findNodeByRegion('about_dongfeng_orv', $locale, 1);
+        $service = $this->data->findNodeByRegion('online_service', $locale, 1);
+        $spare = $this->data->findNodeByRegion('spare_guarantee', $locale, 1);
+        $timeline_bg = $this->data->findNodeByRegion('timeline-bg', $locale, 1);
+        $timeline = $this->data->findNodeByRegion('timeline', $locale);
+        $honors = $this->data->findNodeByRegion('honor', $locale, 9);
+        $news = $this->data->findNodeByRegion('news', $locale, 3);
         $info = $this->data->getInfo($locale);
         $data = [
           'page_title' => $this->translator->trans('About Us'),
           'class' => 'page-about',
-          'hero' => $hero,
-          'about' => $about,
+          'hero' => $hero[0],
+          'about' => $about[0],
           'timeline' => $timeline,
-          'timeline_bg' => $timeline_bg,
-          'service' => $service,
-          'spare' => $spare,
+          'timeline_bg' => empty($timeline_bg) ? '' : $timeline_bg[0],
+          'service' => $service[0],
+          'spare' => $spare[0],
           'honors' => $honors,
           'news' => $news,
           'info' => $info,

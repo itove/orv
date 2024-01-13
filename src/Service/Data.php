@@ -60,9 +60,9 @@ class Data
         return $arr;
     }
     
-    public function findNodeByRegion(string $region, $limit = null, $offset = null, $locale)
+    public function findNodeByRegion(string $region, $locale, $limit = null, $offset = null)
     {
-        $nodes = $this->doctrine->getRepository(Node::class)->findByRegion(['region' => $region], $limit, $offset, $locale);
+        $nodes = $this->doctrine->getRepository(Node::class)->findByRegion(['region' => $region], $locale, $limit, $offset);
         return $nodes;
     }
     
@@ -82,15 +82,15 @@ class Data
       return $this->doctrine->getRepository($entity)->find($nid);
     }
     
-    public function findNodeByTag(string $tag, $limit = null, $offset = null, $locale)
+    public function findNodeByTag(string $tag, $locale, $limit = null, $offset = null)
     {
-        $nodes = $this->doctrine->getRepository(Node::class)->findByTag($tag, $limit, $offset, $locale);
+        $nodes = $this->doctrine->getRepository(Node::class)->findByTag($tag, $locale, $limit, $offset);
         return $nodes;
     }
     
-    public function findNodeByCategory(string $category, $limit = null, $offset = null, $locale)
+    public function findNodeByCategory(string $category, $locale, $limit = null, $offset = null)
     {
-        $nodes = $this->doctrine->getRepository(Node::class)->findByCategory($category, $limit, $offset, $locale);
+        $nodes = $this->doctrine->getRepository(Node::class)->findByCategory($category, $locale, $limit, $offset);
         return $nodes;
     }
     
@@ -101,15 +101,6 @@ class Data
       $node = $this->findOneBy(['language' => $language, 'region' => $region]);
         
       return $node;
-    }
-    
-    public function findNodesByRegionAndLocale($region_label, $locale)
-    {
-      $language = $this->findOneBy(['locale' => $locale], Language::class);
-      $region = $this->findOneBy(['label' => $region_label], Region::class);
-      $nodes = $this->findBy(['language' => $language, 'region' => $region]);
-        
-      return $nodes;
     }
     
     public function findConfByLocale($locale)
@@ -138,9 +129,9 @@ class Data
     public function getInfo(string $locale)
     {
       $conf = $this->findConfByLocale($locale);
-      $beians = $this->findNodeByRegion('beian', 1, null, $locale);
-      $wechats = $this->findNodeByRegion('footer-wechatqr', 1, null, $locale);
-      $miniprogs = $this->findNodeByRegion('footer-miniprogqr', 1, null, $locale);
+      $beians = $this->findNodeByRegion('beian', $locale, 1);
+      $wechats = $this->findNodeByRegion('footer-wechatqr', $locale, 1);
+      $miniprogs = $this->findNodeByRegion('footer-miniprogqr', $locale, 1, null);
       $categories = $this->findAll([], Category::class);
       
       return [
@@ -152,18 +143,17 @@ class Data
       ];
     }
     
-    public function findNodeByCategoryAndRegion($cate_label, $region_label, int $limit, $offset, $locale = 'en')
+    public function findNodeByCategoryAndRegion($cate_label, $region_label, $locale, int $limit = null, $offset = null)
     {
       return $this->doctrine->getRepository(Node::class)
-                            ->findByCategoryAndRegion($cate_label, $region_label, $limit, $offset, $locale)
+                            ->findByCategoryAndRegion($cate_label, $region_label, $locale, $limit, $offset)
                         ;
     }
     
-    public function findNodeByCategoryAndTag($cate_label, $tag_label, int $limit, $offset, $locale = 'en')
+    public function findNodeByCategoryAndTag($cate_label, $tag_label, $locale, int $limit = null, $offset = null)
     {
       return $this->doctrine->getRepository(Node::class)
-                            ->findByCategoryAndTag($cate_label, $tag_label, $limit, $offset, $locale)
+                            ->findByCategoryAndTag($cate_label, $tag_label, $locale, $limit, $offset)
                         ;
     }
 }
-
