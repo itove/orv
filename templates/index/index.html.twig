@@ -70,12 +70,12 @@
       <div class="" id="select-2">MS600</div>
     </div>
     
-    <div class="swiper mySwiper2">
-      <div class="swiper-wrapper"
+    <div class="swiper mySwiper2"
       {% if slider2_bg %}
         style="background-image: url({{ asset("images/#{slider2_bg.image}" )}})"
         {% endif %}
-        >
+    >
+      <div class="swiper-wrapper">
         {% for n in sliders2a %}
         <div class="swiper-slide">
         {% set path = path('app_products', {category: 'series-500'})%}
@@ -115,12 +115,12 @@
       </div>
     </div>
 
-    <div class="swiper mySwiper4 d-none">
-      <div class="swiper-wrapper"
+    <div class="swiper mySwiper4 d-none"
       {% if slider2_bg %}
         style="background-image: url({{ asset("images/#{slider2_bg.image}" )}})"
         {% endif %}
-        >
+    >
+      <div class="swiper-wrapper">
         {% for n in sliders2b %}
         <div class="swiper-slide">
         {% set path = path('app_products', {category: 'series-600'})%}
