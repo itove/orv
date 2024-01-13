@@ -46,7 +46,7 @@ class NodeController extends AbstractController
 
         $data = [
           'nodes' => $nodes,
-          'hero' => $hero[0],
+          'hero' => empty($hero) ? [] : $hero[0],
           'class' => 'page-news-list',
           'page_title' => $this->translator->trans('News'),
           'page' => $page,
@@ -71,7 +71,7 @@ class NodeController extends AbstractController
           'page_title' => $this->translator->trans($pageTitle),
           'class' => 'page-news-show',
           'node' => $node,
-          'hero' => $hero[0],
+          'hero' => empty($hero) ? [] : $hero[0],
           'info' => $info,
         ];
         return $this->render('node/detail.html.twig', $data);

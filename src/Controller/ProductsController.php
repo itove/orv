@@ -43,8 +43,8 @@ class ProductsController extends AbstractController
         $data = [
           'class' => 'page-products position-absolute',
           'page_title' => $this->translator->trans('Products'),
-          'request' => $request[0],
-          'hero' => empty($hero)? [] : $hero[0],
+          'request' => empty($request) ? [] : $request[0],
+          'hero' => empty($hero) ? [] : $hero[0],
           'improves' => $improves,
           'sliders1' => $sliders1,
           'sliders2' => $sliders2,

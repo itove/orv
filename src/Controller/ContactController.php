@@ -37,9 +37,9 @@ class ContactController extends AbstractController
           'class' => 'page-contact',
           'page_title' => $this->translator->trans('Contact Us'),
           'conf' => $conf,
-          'hero' => $hero[0],
-          'contact' => $contact[0],
-          'request' => $request[0],
+          'hero' => empty($hero) ? [] : $hero[0],
+          'contact' => empty($contact) ? [] : $contact[0],
+          'request' => empty($request) ? [] : $request[0],
           'products' => $products,
           'info' => $info,
         ];
