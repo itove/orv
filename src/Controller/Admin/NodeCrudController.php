@@ -123,18 +123,20 @@ class NodeCrudController extends AbstractCrudController
     public function configureFilters(Filters $filters): Filters
     {
         $f = $filters;
-        if ($this->region->getLabel() === 'product') {
-            $f = $filters
-                ->add('tag')
-                ->add('category')
-                ->add('language')
-            ;
-        }
-        if ($this->region->getLabel() === 'news') {
-            $f = $filters
-                ->add('tag')
-                ->add('language')
-            ;
+        if (!is_null($this->region)) {
+            if ($this->region->getLabel() === 'product') {
+                $f = $filters
+                    ->add('tag')
+                    ->add('category')
+                    ->add('language')
+                ;
+            }
+            if ($this->region->getLabel() === 'news') {
+                $f = $filters
+                    ->add('tag')
+                    ->add('language')
+                ;
+            }
         }
         return $f;
     }
