@@ -55,7 +55,7 @@ class NodeRepository extends ServiceEntityRepository
         ;
     }
     
-    public function findByRegion($region, $locale, $limit = null, $offset = null): array
+    public function findByRegion($region, $locale, $limit = null, $offset = null, $order = 'DESC'): array
     {
         return $this->createQueryBuilder('n')
             ->join('n.region', 'r')
@@ -64,7 +64,7 @@ class NodeRepository extends ServiceEntityRepository
             ->andWhere('l.locale = :locale OR l is null')
             ->setParameter('region', $region)
             ->setParameter('locale', $locale)
-            ->orderBy('n.id', 'DESC')
+            ->orderBy('n.id', $order)
             ->setMaxResults($limit)
             ->setFirstResult($offset)
             ->getQuery()

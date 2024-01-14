@@ -60,9 +60,9 @@ class Data
         return $arr;
     }
     
-    public function findNodeByRegion(string $region, $locale, $limit = null, $offset = null)
+    public function findNodeByRegion(string $region, $locale, $limit = null, $offset = null, $order = 'DESC')
     {
-        $nodes = $this->doctrine->getRepository(Node::class)->findByRegion(['region' => $region], $locale, $limit, $offset);
+        $nodes = $this->doctrine->getRepository(Node::class)->findByRegion(['region' => $region], $locale, $limit, $offset, $order);
         return $nodes;
     }
     
