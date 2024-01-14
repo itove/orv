@@ -305,7 +305,7 @@ font-family: 'Source Han Sans CN', sans-serif;
   .overlay-text-2 {
       position: absolute;
       top: 50%;
-      left: 40%;
+      left: 50%;
       font-size: 14px;
       transform: translate(-50%, -50%);
       text-align: center; /* Center-align text horizontally */
@@ -819,7 +819,7 @@ font-family: 'Source Han Sans CN', sans-serif;
     .overlay-text-2 {
         position: absolute;
         top: 50%;
-        left: 40%;
+        left: 50%;
         font-size: 14px;
         transform: translate(-50%, -50%);
         text-align: center; /* Center-align text horizontally */
