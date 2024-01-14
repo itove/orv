@@ -42,7 +42,7 @@ class ProductsController extends AbstractController
         $info = $this->data->getInfo($locale);
         
         $data = [
-          'class' => 'page-products position-absolute',
+          'class' => 'page-products',
           'page_title' => $this->translator->trans('Products'),
           'request' => empty($request) ? [] : $request[0],
           'hero' => empty($hero) ? [] : $hero[0],

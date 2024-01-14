@@ -42,7 +42,7 @@ class IndexController extends AbstractController
           'slider2_bg' => empty($slider2_bg) ? [] : $slider2_bg[0],
           'homeAbout' => empty($homeAbout) ? [] : $homeAbout[0],
           'homeService' => empty($homeService) ? [] : $homeService[0],
-          'class' => 'page-home position-absolute',
+          'class' => 'page-home',
         ];
         return $this->render('index/index.html.twig', $data);
     }
