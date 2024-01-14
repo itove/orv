@@ -1361,24 +1361,24 @@ font-family: 'Source Han Sans CN', sans-serif;
   .mySwiper2 .info,
   .mySwiper4 .info{
     top: 6rem;
-    left: 3rem;
+    left: .5rem;
   }
   .mySwiper2 .info2,
   .mySwiper4 .info2{
     top: 4rem;
-    right: 3rem;
+    right: .5rem;
   }
   .mySwiper2 .title,
   .mySwiper4 .title{
-    font-size: 1.6rem;
+    font-size: 12px;
   }
   .mySwiper2 .summary,
   .mySwiper4 .summary{
-    font-size: 0.8rem;
+    font-size: 10px;
   }
   .mySwiper2 .value,
   .mySwiper4 .value{
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
   .mySwiper2 .name,
   .mySwiper4 .name{
@@ -1389,7 +1389,7 @@ font-family: 'Source Han Sans CN', sans-serif;
   .mySwiper2 .info2,
   .mySwiper4 .info2{
     top: 4rem;
-    right: 1.5rem;
+    right: .5rem;
   }
 }
 
