@@ -93,16 +93,26 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToUrl('Back to Site', 'fas fa-arrow-circle-left', '/');
         
         yield MenuItem::section('Content Management');
+        yield MenuItem::linkToCrud('Product Management', 'fas fa-truck', Node::class)
+            ->setQueryParameter('region', 'product')
+        ;
+        yield MenuItem::linkToCrud('News', 'fas fa-newspaper', Node::class)
+            ->setQueryParameter('region', 'news')
+        ;
+        
+        yield MenuItem::section('Static Area');
         
         // admin menu of regions
         foreach ($this->regions as $region) {
             $action = 'index';
             // $action = 'detail';
-            yield MenuItem::linkToCrud($region->getName(), "fas fa-{$region->getIcon()}", Node::class)
-                ->setQueryParameter('region', $region->getLabel())
-                ->setAction($action)
+            if (!in_array($region->getLabel(), ['product', 'news'])) {
+                yield MenuItem::linkToCrud($region->getName(), "fas fa-{$region->getIcon()}", Node::class)
+                    ->setQueryParameter('region', $region->getLabel())
+                    ->setAction($action)
                 // ->setEntityId(7)
-            ;
+                ;
+            }
         }
         
         yield MenuItem::section('Settings');
