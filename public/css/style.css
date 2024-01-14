@@ -1697,20 +1697,10 @@ ul li:hover .slider p {
   transition: all 1s 0.2s ease;
 }
 
-.page-about .nav_background,
-.page-contact .nav_background,
-.page-news-list .nav_background,
-.page-news-show .nav_background
+.nav_background
 {
   /* background-color: rgba(0, 0, 0, 0.8) !important; */
   background-color: #D1CCC4 !important;
-}
-
-@media (min-width: 200px) and (max-width: 990px) {
-  .nav_background {
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.8) !important;
-  }
 }
 
    /* Extra small devices (phones, 600px and down) */
