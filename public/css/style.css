@@ -1600,7 +1600,16 @@ font-family: 'Source Han Sans CN', sans-serif;
     font-family: "Source Han Sans CN";
   }
 
+@media (max-width: 500px) {
+.page-2-section-1-heading{
+    font-size: 1.1rem;
+}
 
+  .form-heading,
+  .page-2-section-2-heading {
+    font-size: 1rem;
+  }
+}
 
 .wrapper {
   position: fixed;
