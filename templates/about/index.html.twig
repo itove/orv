@@ -384,7 +384,12 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
+      slidesPerView: 1,
+      breakpoints: {
+        450: {
+          slidesPerView: 3
+        }
+      },
       spaceBetween: 30,
       freeMode: true,
       pagination: {
