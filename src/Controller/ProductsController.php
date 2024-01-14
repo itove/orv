@@ -35,6 +35,7 @@ class ProductsController extends AbstractController
         $sliders5 = $this->data->findNodeByCategoryAndTag($category, $locale, 'products-slider-5', 3);
         $sliders6 = $this->data->findNodeByCategoryAndTag($category, $locale, 'products-slider-6');
         $spec1 = $this->data->findNodeByCategoryAndTag($category, $locale, 'products-spec-1', 1);
+        $views = $this->data->findNodeByCategoryAndRegion($category, $locale, 'products-views', 3);
         $improves = $this->data->findNodeByCategoryAndTag($category, $locale, 'products-improves', 5);
         $products = $this->data->findNodeByShow($locale);
         
@@ -53,6 +54,7 @@ class ProductsController extends AbstractController
           'sliders5' => $sliders5,
           'sliders6' => $sliders6,
           'spec1' => empty($spec1)? [] : $spec1[0],
+          'views' => $views,
           'products' => $products,
           'info' => $info,
         ];
