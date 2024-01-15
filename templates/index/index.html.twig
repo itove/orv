@@ -168,7 +168,12 @@
           <div class="set_position">
             <div class="title">{{ homeAbout.title }}</div>
             {% set s = homeAbout.summary|split('\n') %}
-            <div class="summary">{{ s[0] }}<br />{{ s[1]}}</div>
+            <div class="summary">
+            {% for l in s %}
+            {{ l }}
+            <br />
+            {% endfor %}
+            </div>
           </div>
           <a href="{{prefix}}/about#about"><img src="{{ asset('images/arrow-1.png') }}"></a>
         </div>
@@ -176,7 +181,12 @@
           <div class="set_position">
             <div class="title">{{ homeService.title }}</div>
             {% set s = homeService.summary|split('\n') %}
-            <div class="summary">{{ s[0] }}<br />{{ s[1]}}</div>
+            <div class="summary">
+            {% for l in s %}
+            {{ l }}
+            <br />
+            {% endfor %}
+            </div>
           </div>
           <a href="{{prefix}}/about#service"><img src="{{ asset('images/arrow-1.png') }}"></a>
         </div>
