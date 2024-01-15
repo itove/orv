@@ -106,7 +106,7 @@ class DashboardController extends AbstractDashboardController
         foreach ($this->regions as $region) {
             $action = 'index';
             // $action = 'detail';
-            if (!in_array($region->getLabel(), ['product', 'news'])) {
+            if (!in_array($region->getLabel(), ['product', 'news', 'terms', 'service_guarantee'])) {
                 yield MenuItem::linkToCrud($region->getName(), "fas fa-{$region->getIcon()}", Node::class)
                     ->setQueryParameter('region', $region->getLabel())
                     ->setAction($action)
