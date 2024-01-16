@@ -940,14 +940,12 @@ font-family: 'Source Han Sans CN', sans-serif;
     .section-7-text h1{
         position: absolute;
         top: 70%;
-        left: 5%;
         font-size: 20px;
         font-weight: 600;
     }
     .section-7-text p{
         position: absolute;
         top: 77%;
-        left: 5%;
         font-size: 12px;
         font-weight: 600;
         }
