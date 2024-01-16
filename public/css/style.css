@@ -921,7 +921,7 @@ font-family: 'Source Han Sans CN', sans-serif;
         font-size: 12px;
         font-weight: 600;
         }
-    @media (max-width: 850px) {
+    @media (max-width: 767px) {
       .section-7-text h1,
       .section-7-text p{
         position: relative;
