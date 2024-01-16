@@ -1127,6 +1127,11 @@ font-family: 'Source Han Sans CN', sans-serif;
     background-position: center;
     background-size: cover;
   }
+@media(max-width: 400px){
+  .card_back_images1{
+    height: 346px;
+  }
+}
   .set_position
   {
     position: absolute;
@@ -1850,6 +1855,11 @@ ul li:hover .slider p {
 }
 .swiper6 .product-img{
   height: 34rem !important;
+}
+@media(max-width: 400px) {
+  .swiper6 .product-img{
+    height: 13rem !important;
+  }
 }
 .swiper6 .swiper-pagination{
   top: 32rem !important;
