@@ -165,9 +165,11 @@
           <div class="row pt-5 pt-md-0">
             <div class="col-12 col-md-8 d-flex align-items-center">
               <p class="pt-5 mb-0 pb-0 pb-md-3 px-3 px-md-0">
-                东风越野车有限公司 DONGFENG OFF-ROAD VEHICLE CO.,LTD.
-                <a href="{{prefix}}/products">产品展示</a> | <a href="{{prefix}}/about"> 公司介绍</a> |
-                <a href="{{prefix}}/contact">联系我们</a> <br />
+                {{ info.conf.company }}
+                <a href="{{ path('app_products', {category: 'series-500'}) }}">Frontliner 500</a> |
+                <a href="{{ path('app_products', {category: 'series-600'}) }}">MS600</a> |
+                <a href="{{ path('app_about') }}">{{ 'ABOUT US'|trans }}</a> |
+                <a href="{{ path('app_contact') }}">{{ 'CONTACT'|trans }}</a> <br />
                 {{ info.conf.address }}
                 {% if info.beian %}
                 <a href="https://beian.miit.gov.cn/">{{ info.beian.summary }}</a>
