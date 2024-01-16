@@ -399,34 +399,6 @@ font-family: 'Source Han Sans CN', sans-serif;
   .section-6-text-2{
       margin-top: 10% !important;
   }
-  .section-7{
-      background-image: url('../images/矩形\ 1520\ 拷贝\ 32.png');
-      background-position: center;
-      background-size: cover;
-      padding: 5% 0%;
-  }
-  
-  .section-7-text{
-      background-image: url('../images/bg-2.png');
-      background-position: center;
-      background-size: cover;
-      position: relative;
-      height: 91%;
-  }
-  .section-7-text h1{
-      position: absolute;
-      top: 70%;
-      left: 5%;
-      font-size: 20px;
-      font-weight: 600;
-  }
-  .section-7-text p{
-      position: absolute;
-      top: 77%;
-      left: 5%;
-      font-size: 12px;
-      font-weight: 600;
-      }
       .swiper-pagination-bullet-active{
           background-color: #fff !important;
           padding: 3px !important;
