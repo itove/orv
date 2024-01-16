@@ -1882,3 +1882,8 @@ ul li:hover .slider p {
   border-radius: 0 !important;
   --bs-dropdown-link-hover-bg: #252525 !important;
 }
+form .form-check,
+form .bottom-text{
+  font-size: .9rem;
+  color: var(--bs-gray-700);
+}
