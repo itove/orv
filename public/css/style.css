@@ -1859,6 +1859,13 @@ ul li:hover .slider p {
   .swiper6 .product-img{
     height: 13rem !important;
   }
+  .swiper6 .image-text{
+    top: 10%;
+    font-size: 1rem;
+  }
+  .swiper6 .section-4-text{
+    top: 11rem;
+  }
 }
 .swiper6 .swiper-pagination{
   top: 32rem !important;
