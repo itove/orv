@@ -61,6 +61,7 @@ Specs: 参数
 Spec Name: 参数名
 Spec Value: 参数值
 Lastname: 姓氏
+Last Name: 姓氏
 Country: 国家
 SHOW MORE: 查看详情
 News: 新闻动态
@@ -81,6 +82,7 @@ Icon: 图标
 Phone2: 联系电话
 Show: 需求表单中显示
 Firstname: 名字
+First Name: 名字
 Tel: 电话
 Country/Region: 国家/地区
 Describe Your Needs: 需求描述
