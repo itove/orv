@@ -63,6 +63,7 @@ class ConfCrudController extends AbstractCrudController
             default:
                 $fields = [
                     TextField::new('Sitename'),
+                    TextField::new('company'),
                     ArrayField::new('keywords'),
                     TextareaField::new('description'),
                     TextField::new('address'),

@@ -76,6 +76,9 @@ class Conf
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $phone2 = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $company = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -213,6 +216,18 @@ class Conf
     public function setPhone2(?string $phone2): static
     {
         $this->phone2 = $phone2;
+
+        return $this;
+    }
+
+    public function getCompany(): ?string
+    {
+        return $this->company;
+    }
+
+    public function setCompany(?string $company): static
+    {
+        $this->company = $company;
 
         return $this;
     }
