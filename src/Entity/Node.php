@@ -56,6 +56,7 @@ class Node
     private ?Language $language = null;
 
     #[ORM\OneToMany(mappedBy: 'node', targetEntity: Spec::class, orphanRemoval: true, cascade: ["persist"])]
+    #[Assert\Valid]
     private Collection $specs;
 
     #[ORM\OneToMany(mappedBy: 'node', targetEntity: Image::class, orphanRemoval: true, cascade: ["persist"])]
