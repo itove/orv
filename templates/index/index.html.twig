@@ -216,7 +216,12 @@
     <script>
       var swiper0 = new Swiper(".mySwiper", {
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 1,
+        breakpoints: {
+          450: {
+            slidesPerView: 8
+          }
+        },
         freeMode: true,
         watchSlidesProgress: true,
         navigation: {
@@ -226,7 +231,12 @@
       });
       var swiper1 = new Swiper(".mySwiper4a", {
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 1,
+        breakpoints: {
+          450: {
+            slidesPerView: 8
+          }
+        },
         freeMode: true,
         watchSlidesProgress: true,
         navigation: {
