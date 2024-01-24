@@ -112,7 +112,11 @@
     </div>
     {% endblock %}
 
-    {% block hero %}{% endblock %}
+    {% block hero %}
+        <div class="">
+          <img class="w-100" src="{{ asset("images/#{hero.image}")}}">
+        </div>
+    {% endblock %}
 
     {% block breadcrumbs %}
     <div class="container-fluid bg-light">
