@@ -16,13 +16,13 @@ class Spec
 
     #[Assert\Length(
         min: 2,
-        max: 50,
+        max: 255,
     )]
-    #[ORM\Column(length: 25)]
+    #[ORM\Column(length: 255)]
     private ?string $name = null;
 
     #[Assert\Length(
-        max: 250,
+        max: 255,
     )]
     #[ORM\Column(length: 255)]
     private ?string $value = null;
