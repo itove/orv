@@ -2,14 +2,6 @@
 
 {% block title %}{{ page_title }}{% endblock %}
 
-{% block hero %}
-    <div class="container-fluid hero-section-bg-page-2 position-relative d-flex justify-content-center align-items-center" style="background-image: url({{ asset("images/#{hero.image}")}})">
-        <div class="container d-flex justify-content-center align-items-center">
-            <h2 class="position-absolute text-white">{{'News'|trans}}</h2>
-        </div>
-    </div>
-{% endblock %}
-
 {% block main %}
     <div class="text-center fs-3 mt-5">公司新闻</div>
     <div class="text-center fs-6 text-body-tertiary">COMPANY NEWS</div>
