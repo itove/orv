@@ -43,7 +43,7 @@ class AboutController extends AbstractController
           'service' => empty($service) ? [] : $service[0],
           'spare' => empty($spare) ? [] : $spare[0],
           'honors' => $honors,
-          'news' => $news,
+          'nodes' => $news,
           'info' => $info,
         ];
         return $this->render('about/index.html.twig', $data);

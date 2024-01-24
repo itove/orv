@@ -346,19 +346,8 @@
                 </div>
             </div>
             <div class="row mt-5">
-{% for n in news %}
-          <div class="news-item col-lg-4 col-md-6 col-12 mt-lg-0 mt-md-0 mb-md-0 mt-3 mb-lg-0 mb-3">
-            <div class="card rounded-0">
-              <img src="{{ asset("images/#{n.image}")}}" class="card-img-top rounded-0" alt="..." />
-              <div class="card-body p-4">
-                <h5 class="card-title text_heading">{{ n.title }}</h5>
-                <p class="card-text text">{{ n.summary }} </p>
-                <a href="{{prefix}}/news/{{ n.id }}" class="link_button">{{ 'SHOW MORE'|trans }}</a>
-              </div>
-            </div>
-          </div>
-{% endfor %}
     
+{{ include('newslist.html.twig') }}
             </div>
             <div class="row">
                 <div class="col-12 text-center pt-3 mt-5">
