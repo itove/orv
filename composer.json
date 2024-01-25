@@ -55,6 +55,7 @@
         "sort-packages": true
     },
     "autoload": {
+        "files": ["src/Service/GetProperties.php"],
         "psr-4": {
             "App\\": "src/"
         }
