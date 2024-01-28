@@ -32,7 +32,6 @@ class AboutController extends AbstractController
         $timeline = $this->data->findNodeByRegion('timeline', $locale, null, null, 'ASC');
         $honors = $this->data->findNodeByRegion('honor', $locale, 9);
         $news = $this->data->findNodeByRegion('news', $locale, 3);
-        $info = $this->data->getInfo($locale);
         $data = [
           'page_title' => $this->translator->trans('About Us'),
           'class' => 'page-about',
@@ -44,7 +43,6 @@ class AboutController extends AbstractController
           'spare' => empty($spare) ? [] : $spare[0],
           'honors' => $honors,
           'nodes' => $news,
-          'info' => $info,
         ];
         return $this->render('about/index.html.twig', $data);
     }

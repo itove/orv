@@ -39,8 +39,6 @@ class ProductsController extends AbstractController
         $improves = $this->data->findNodeByCategoryAndTag($category, $locale, 'products-improves', 5);
         $products = $this->data->findNodeByShow($locale);
         
-        $info = $this->data->getInfo($locale);
-        
         $data = [
           'class' => 'page-products',
           'page_title' => $this->translator->trans('Products'),
@@ -56,7 +54,6 @@ class ProductsController extends AbstractController
           'spec1' => empty($spec1)? [] : $spec1[0],
           'views' => $views,
           'products' => $products,
-          'info' => $info,
         ];
         return $this->render('products/index.html.twig', $data);
     }

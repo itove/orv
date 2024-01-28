@@ -31,10 +31,8 @@ class IndexController extends AbstractController
         $sliders2a = $this->data->findNodeByCategoryAndTag('series-500', $locale, 'home-slider-2', 20);
         $sliders2b = $this->data->findNodeByCategoryAndTag('series-600', $locale, 'home-slider-2', 20);
         $slider2_bg = $this->data->findNodeByRegion('home-slider2-bg', $locale, 1);
-        $info = $this->data->getInfo($locale);
         $data = [
           'path' => '',
-          'info' => $info,
           'nodes' => $nodes,
           'sliders1' => $sliders1,
           'sliders2a' => $sliders2a,

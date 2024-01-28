@@ -42,7 +42,6 @@ class NodeController extends AbstractController
         $arr['nodes'] = $nodes;
         $arr['page'] = $page;
         $arr['page_count'] = ceil(count($nodes_all) / $limit);
-        $info = $this->data->getInfo($locale);
 
         $data = [
           'nodes' => $nodes,
@@ -51,7 +50,6 @@ class NodeController extends AbstractController
           'page_title' => $this->translator->trans('News'),
           'page' => $page,
           'page_count' => ceil(count($nodes_all) / $limit),
-          'info' => $info,
         ];
         return $this->render('node/index.html.twig', $data);
     }
@@ -66,13 +64,11 @@ class NodeController extends AbstractController
         $locale = $request->getLocale();
         $node = $this->data->get($nid);
         $hero = $this->data->findNodeByRegion('news-hero', $locale, 1);
-        $info = $this->data->getInfo($locale);
         $data = [
           'page_title' => $this->translator->trans($pageTitle),
           'class' => 'page-news-show',
           'node' => $node,
           'hero' => empty($hero) ? [] : $hero[0],
-          'info' => $info,
         ];
         return $this->render('node/detail.html.twig', $data);
     }
