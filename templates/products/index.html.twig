@@ -9,9 +9,6 @@
 {% if hero %}
     <div class="banner-image">
         <img src="{{ asset("images/#{hero.image}")}}" alt="car-image" class="img-fluid w-100">
-        <div class="centered-text">
-            <h2 class="fw-bold">{{ hero.title }}</h2>
-        </div>
     </div>
 {% endif %}
     <div class="section-1 container-fluid px-0">
@@ -113,8 +110,8 @@
     </div>
 {% if spec1 %}
     <div class="section-4 container-fluid px-0" id="spec-1">
-        <div class="section-4-bg">
-            <img src="{{ asset("images/#{spec1.image}")}}" alt="jeep" class="img-fluid">
+        <div class="section-4-bg w-100">
+            <img src="{{ asset("images/#{spec1.image}")}}" alt="jeep" class="img-fluid w-100">
             <div class="section-4-title w-75">
                 <h1 class="fw-bold">{{ spec1.title }}</h1>
                 <p>{{ spec1.summary }}</p>
