@@ -236,12 +236,12 @@
   <div class="accordion-item">
     <div id="collapse-spec-{{n.id}}" class="accordion-collapse collapse" data-bs-parent="#accordion-node-{{n.id}}">
       <div class="accordion-body">
-        <div class="container text-center">
-          <div class="row row-cols-auto justify-content-center">
+        <div class="container">
+          <div class="specs">
         {% for s in n.specs %}
-          <div class="col">
-            <div class="fw-bold">{{ s.name }}</div>
-            <div>{{ s.value }}</div>
+          <div class="">
+            <span class="fw-bold">{{ s.name }}:</span>
+            <span>{{ s.value }}</span>
           </div>
         {% endfor %}
         </div>

@@ -1878,3 +1878,8 @@ form .bottom-text{
   font-size: .9rem;
   color: var(--bs-gray-700);
 }
+.specs{
+  text-align: left;
+  width: 60%;
+  margin: auto;
+}
