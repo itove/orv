@@ -1613,6 +1613,12 @@ font-family: 'Source Han Sans CN', sans-serif;
 	transform: scale(1.5);
 }
 
+@media (max-width: 500px) {
+  .wrapper {
+    right: 4%;
+  }
+}
+
 #wraper ul {
   list-style: none;
 }
