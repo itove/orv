@@ -1610,6 +1610,7 @@ font-family: 'Source Han Sans CN', sans-serif;
   bottom: 22%;
   right: 1%;
   z-index: 10000;
+	transform: scale(1.5);
 }
 
 #wraper ul {
